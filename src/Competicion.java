@@ -7,19 +7,16 @@ public class Competicion {
     private int contadorCarreras;
     private boolean empezada;
 
-    public Competicion(String nombre, int contadorPilotos, int contadorCarreras, boolean empezada) {
+    public Competicion(String nombre, int maxPilotos, int maxCarreras) {
         this.nombreCompeticion = nombre;
-        this.pilotos = pilotos;
-        this.contadorPilotos = contadorPilotos;
-        this.carreras = carreras;
-        this.contadorCarreras = contadorCarreras;
-        this.empezada = empezada;
+
     }
 
     /**
-     *
-     * @param piloto
-     * @return
+     * Añade un piloto a la lista de participantes de la competición.
+     * Imprime un mensaje informando del resultado de la operación.
+     * @param piloto Objeto Piloto a añadir.
+     * @return true si se añade correctamente, false si ya existe o la competición ya empezó.
      */
     public boolean anhadirPiloto(Piloto piloto) {
         // TODO Lógica de validación e inserción
@@ -27,22 +24,22 @@ public class Competicion {
     }
 
     /**
-     *
-     * @param circuito
-     * @param vueltas
-     * @return
+     * Crea y añade una nueva carrera al calendario de la competición.
+     * @param circuito El circuito donde se correrá.
+     * @param vueltas Número de vueltas de la carrera.
+     * @return true si se añade correctamente, false si el circuito ya está programado o el campeonato ya empezó.
      */
     public boolean anhadirCarrera(Circuito circuito, int vueltas) {
-        // TODO
+        // TODO Lógica de validación e inserción
         return false;
     }
 
     /**
-     *
-     * @return
+     * Simula todas las carreras del campeonato secuencialmente.
+     * @return true si se ejecutan las carreras, false si el campeonato ya se había simulado previamente.
      */
     public boolean arrancarCampeonato() {
-        // TODO
+        // TODO Bucle para ejecutarCarrera()
         return false;
     }
 
@@ -62,6 +59,3 @@ public class Competicion {
         // TODO: Lógica de extracción de equipos, suma de puntos y ordenación
     }
 }
-
-
-
