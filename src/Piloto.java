@@ -18,6 +18,6 @@ public class Piloto{
     }
 
     public double velocidadMedia(){
-        return coche.getVelocidadMaxima()*habilidad*rand.nextDouble(0.6,1.1);
+        return 0;
     }
 }
