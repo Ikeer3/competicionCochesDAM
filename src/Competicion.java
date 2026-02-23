@@ -2,17 +2,13 @@ public class Competicion {
 
     private String nombreCompeticion;
     private Piloto[] pilotos;
-    private int contadorPilotos;
     private Carrera[] carreras;
-    private int contadorCarreras;
     private boolean empezada;
 
     public Competicion(String nombre) {
         this.nombreCompeticion = nombre;
         this.pilotos = new Piloto[0];
         this.carreras = new Carrera[0];
-        this.contadorPilotos = 0;
-        this.contadorCarreras = 0;
         this.empezada = false;
     }
 
