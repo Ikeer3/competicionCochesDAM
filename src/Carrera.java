@@ -4,6 +4,14 @@ public class Carrera {
     private Piloto[] arraypilotoPuesto;
     private Piloto[] arraypiloto;
 
+    public String getTemporadaCarrera() {
+        return temporadaCarrera;
+    }
+
+    public double getVueltasCarrera() {
+        return vueltasCarrera;
+    }
+
     public double LongitudTotalHecho(){
 
 
