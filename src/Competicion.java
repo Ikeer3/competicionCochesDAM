@@ -24,8 +24,8 @@ public class Competicion {
 
 
         //revision del pilot Nuevo que no exista en el array actual
-        for (int i = 0; i < pilotos.length; i++) {
-            pilotos[i]= 
+        for (int i = 0; i < arraypilotos.length; i++) {
+            arraypilotos[i]= 
 
 
         }
