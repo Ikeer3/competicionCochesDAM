@@ -47,6 +47,12 @@ public class Competicion {
      */
     public boolean anhadirCarrera(Circuito circuito, int vueltas) {
         // TODO Lógica de validación e inserción
+        // Comprobar si el campeonato ya ha empezado
+        if (empezada) {
+            System.out.println("No se ha podido añadir la carrera en " + circuito.getNombreCircuito() +
+                    ". La competición " + nombreCompeticion + " ya ha empezado!!");
+            return false;
+        }
         return false;
     }
 
