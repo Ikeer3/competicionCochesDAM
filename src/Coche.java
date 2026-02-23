@@ -1,3 +1,4 @@
+import java.util.Random;
 public class Coche {
 
     private String escuderia;
@@ -21,6 +22,15 @@ public class Coche {
      */
     public boolean acabaCarrera(int kilometros) {
         // TODO Implementar lógica de probablilidad
+        Random rand=new Random();
+        int tramos =(kilometros/5);
+
+        for(int i=0;i<tramos;i++){
+            double probabilidadAleatoria= rand.nextDouble();
+            if(probabilidadAleatoria<fiabilidad){
+                return false;
+            }
+        }
         return true;
     }
 }
