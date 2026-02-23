@@ -53,6 +53,15 @@ public class Competicion {
                     ". La competición " + nombreCompeticion + " ya ha empezado!!");
             return false;
         }
+
+        // Comprobar si ya existe una carrera en el mismo circuito
+        for (int i = 0; i < arrayCarreras.length; i++) {
+            if (arrayCarreras[i].getTipoCircuito().getNombreCircuito().equals(circuito.getNombreCircuito())) {
+                System.out.println("No se ha podido añadir la carrera. Ya hay una programada en el circuito "
+                        + circuito.getNombreCircuito());
+                return false;
+            }
+        }
         return false;
     }
 
