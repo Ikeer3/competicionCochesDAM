@@ -7,6 +7,14 @@ public class Circuito {
         LongitudCircuito = longitudCircuito;
     }
 
+    public String getNombreCircuito() {
+        return NombreCircuito;
+    }
+
+    public double getLongitudCircuito() {
+        return LongitudCircuito;
+    }
+
     public void anhadirCarreraCircuito(Carrera carrera) {
 
     }
