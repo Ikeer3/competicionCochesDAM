@@ -19,14 +19,16 @@ public class Competicion {
     /**
      * Añade un piloto a la lista de participantes de la competición. Lista la cual es array de pilotos
      * Imprime un mensaje informando del resultado de la operación.
-     * @param arrayPilotos Objeto Piloto por añadir.
+     * @param pilotoNuevo Objeto Piloto por añadir.
      * @return true si se añade correctamente, false si ya existe o la competición ya empezó o .
      * (si la competicion ya empezo no se puede incluir ningun piloto// ya existe no se agregara)
      */
-    public boolean anhadirPiloto(Piloto[] arrayPilotos) {
+    public boolean anhadirPiloto(Piloto pilotoNuevo) {
         // TODO Lógica de validación e inserción
 
-                
+
+        //revision del pilot Nuevo que no exista en el array actual
+
 
 
 
