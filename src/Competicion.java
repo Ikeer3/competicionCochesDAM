@@ -9,7 +9,11 @@ public class Competicion {
 
     public Competicion(String nombre, int maxPilotos, int maxCarreras) {
         this.nombreCompeticion = nombre;
-
+        this.pilotos = new Piloto[maxPilotos];
+        this.carreras = new Carrera[maxCarreras];
+        this.contadorPilotos = 0;
+        this.contadorCarreras = 0;
+        this.empezada = false;
     }
 
     /**
@@ -27,7 +31,7 @@ public class Competicion {
      * Crea y añade una nueva carrera al calendario de la competición.
      * @param circuito El circuito donde se correrá.
      * @param vueltas Número de vueltas de la carrera.
-     * @return true si se añade correctamente, false si el circuito ya está programado o el campeonato ya empezó.
+     * @return true si se añade correctamente, false si el circuito ya está programado o la competición ya empezó.
      */
     public boolean anhadirCarrera(Circuito circuito, int vueltas) {
         // TODO Lógica de validación e inserción
@@ -48,7 +52,7 @@ public class Competicion {
      * ordenados por su puntuación total obtenida en las carreras.
      */
     public void imprimirResultado() {
-        // TODO Lógica de puntuación y ordenación de pilotos
+        // TODO Lógica de puntuación y clasificación de pilotos
     }
 
     /**
@@ -56,6 +60,6 @@ public class Competicion {
      * sumando los puntos de todos los pilotos de cada escudería.
      */
     public void imprimirResultadoEscudería() {
-        // TODO: Lógica de extracción de equipos, suma de puntos y ordenación
+        // TODO: Lógica de extracción de equipos, suma de puntos y clasificación
     }
 }
