@@ -5,11 +5,29 @@ public class Piloto{
     private int edadPiloto;
     private double habilidad;
     private String habilidadString;
+    private Coche coche;
 
-    public Piloto(String nombre, int edad, String habilidadString) {
+    public Piloto(String nombre, int edad, String habilidadString, Coche coche) {
         this.nombrePiloto = nombre;
         this.edadPiloto = edad;
-        this.habilidadString = habilidadString;
+        this.coche=coche;
+
+        //Relacion habilidad
+        switch (habilidadString){
+            case "Excelente":
+                this.habilidad= rand.nextDouble(0.9,1.1);
+                break;
+            case "Bueno":
+                this.habilidad=rand.nextDouble(0.8,0.9);
+                break;
+            case "Mediocre":
+                this.habilidad= rand.nextDouble(0.7,0.8);
+                break;
+            default:
+                this.habilidad=0.6;
+                break;
+        }
+
     }
 
     Random rand=new Random();
@@ -18,6 +36,6 @@ public class Piloto{
     }
 
     public double velocidadMedia(){
-        return 0;
+        return coche.getVelocidadMaxima()*habilidad*rand.nextDouble(0.9,1.1);
     }
 }
