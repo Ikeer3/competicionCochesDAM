@@ -30,6 +30,26 @@ public class Piloto{
 
     }
 
+    public String getNombrePiloto() {
+        return nombrePiloto;
+    }
+
+    public int getEdadPiloto() {
+        return edadPiloto;
+    }
+
+    public double getHabilidad() {
+        return habilidad;
+    }
+
+    public String getHabilidadString() {
+        return habilidadString;
+    }
+
+    public Coche getCoche() {
+        return coche;
+    }
+
     Random rand=new Random();
     public String getNombre() {
         return nombrePiloto;
