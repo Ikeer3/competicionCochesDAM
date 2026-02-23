@@ -7,10 +7,10 @@ public class Competicion {
     private int contadorCarreras;
     private boolean empezada;
 
-    public Competicion(String nombre, int maxPilotos, int maxCarreras) {
+    public Competicion(String nombre) {
         this.nombreCompeticion = nombre;
-        this.pilotos = new Piloto[maxPilotos];
-        this.carreras = new Carrera[maxCarreras];
+        this.pilotos = new Piloto[0];
+        this.carreras = new Carrera[0];
         this.contadorPilotos = 0;
         this.contadorCarreras = 0;
         this.empezada = false;
@@ -31,7 +31,8 @@ public class Competicion {
      * Crea y añade una nueva carrera al calendario de la competición.
      * @param circuito El circuito donde se correrá.
      * @param vueltas Número de vueltas de la carrera.
-     * @return true si se añade correctamente, false si el circuito ya está programado o la competición ya empezó.
+     * @return true si se añade correctamente, false ya ha comenzado el campeonato aún
+     * o ya hay otra carrera en el mismo circuito en el campeonato.
      */
     public boolean anhadirCarrera(Circuito circuito, int vueltas) {
         // TODO Lógica de validación e inserción
