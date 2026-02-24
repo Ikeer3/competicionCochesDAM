@@ -3,13 +3,13 @@ public class Competicion {
     private String nombreCompeticion;
     private Piloto[] arraypilotos;
     private Carrera[] arrayCarreras;
-    private boolean empezada;
+    private boolean empezarCarrera;
 
     public Competicion(String nombre) {
         this.nombreCompeticion = nombre;
         this.arraypilotos = new Piloto[0];
         this.arrayCarreras = new Carrera[0];
-        this.empezada = false;
+        this.empezarCarrera = false;
     }
 
     /**
@@ -21,37 +21,43 @@ public class Competicion {
      */
     public boolean anhadirPiloto(Piloto pilotoNuevo) {
         // TODO Lógica de validación e inserción
+        //PASOS QUE SIGUE EL CODIGO: (empezarCarrera)
+        /*
+        1.- PRIMERO COMPROBAMOS QUE NO HAYA EMPEAZADO LA CARRERA SI LA CARRERA COMENZO ENTONCES RETURN FALSE
+         */
+
+        //SI NO HAY CARRERA ENTONCES CONTINUA
+
         //PASOS QUE SIGUE EL CODIGO: (pilotoNuevo)
         /*
         1.- PRIMERO COMPRUEBA QUE "PILOTONUEVO" NO EXISTA EN EL ARRAYORIGINAL
         2.- SEGUNDO ARRAYCOPION (como su nombre lo dice)  COPIA LOS DATOS DEL ARRAYORIGINAL, EN LAS MISMAS POSICIONES
         3.- TERCERO ARRAYCOPION AGREGA EN LA ULTIMA POSICION ,AGREGA AL PILOTONUEVO
          */
-
-        //PASOS QUE SIGUE EL CODIGO: (empezada)
-
-
-
-        //PASO 1 (verificacion de pilotoNuevo)
-        for (int i = 0; i < arraypilotos.length; i++) {
-            if (arraypilotos[i]==pilotoNuevo){
-                System.out.println("Piloto ya existente ");
+            if (empezarCarrera ==true){
+                System.out.println("Carrera ya ha comenzado (No se puede inscribir piloto)");
                 return false;
+            }else {
+
+                //PASOS DE pilotoNuevo:
+                //PASO 1 (verificacion de pilotoNuevo)
+                for (int i = 0; i < arraypilotos.length; i++) {
+                    if (arraypilotos[i] == pilotoNuevo) {
+                        System.out.println("Piloto ya existente ");
+                        return false;
+                    }
+                }
+                //PASO 2 (creacion de arrayCopion)
+                Piloto[] arrayCopion = new Piloto[arraypilotos.length + 1];
+                //arrayCopion copia los datos del arrayOriginal
+                for (int i = 0; i < arraypilotos.length; i++) {
+                    arrayCopion[i] = arraypilotos[i];
+                }
+                //PASO 3 (datos de pilotoNuevo son agregados a la ultima posicion del arrayOriginal
+                arrayCopion[arraypilotos.length] = pilotoNuevo;
+                return true;
+
             }
-        }
-
-        //PASO 2 (creacion de arrayCopion)
-        Piloto[] arrayCopion= new Piloto[arraypilotos.length+1];
-
-        //arrayCopion copia los datos del arrayOriginal
-        for (int i = 0; i < arraypilotos.length; i++) {
-            arrayCopion[i]=arraypilotos[i];
-        }
-
-        //PASO 3 (datos de pilotoNuevo son agregados a la ultima posicion del arrayOriginal
-        arrayCopion[arraypilotos.length]=pilotoNuevo;
-        return true;
-
     }
 
     /**
@@ -64,7 +70,7 @@ public class Competicion {
     public boolean anhadirCarrera(Circuito circuito, int vueltas) {
         // TODO Lógica de validación e inserción
         // Comprobar si el campeonato ya ha empezado
-        if (empezada) {
+        if (empezarCarrera) {
             System.out.println("No se ha podido añadir la carrera en " + circuito.getNombreCircuito() +
                     ". La competición " + nombreCompeticion + " ya ha empezado!!");
             return false;
