@@ -21,39 +21,36 @@ public class Competicion {
      */
     public boolean anhadirPiloto(Piloto pilotoNuevo) {
         // TODO Lógica de validación e inserción
-
-
-        //PASOS QUE SIGUE EL CODIGO:
+        //PASOS QUE SIGUE EL CODIGO: (pilotoNuevo)
         /*
-        1.- PRIMERO COMPRUEBA QUE "PILOTONUEVO NO EX
+        1.- PRIMERO COMPRUEBA QUE "PILOTONUEVO" NO EXISTA EN EL ARRAYORIGINAL
+        2.- SEGUNDO ARRAYCOPION (como su nombre lo dice)  COPIA LOS DATOS DEL ARRAYORIGINAL, EN LAS MISMAS POSICIONES
+        3.- TERCERO ARRAYCOPION AGREGA EN LA ULTIMA POSICION ,AGREGA AL PILOTONUEVO
          */
 
+        //PASOS QUE SIGUE EL CODIGO: (empezada)
 
 
 
-
-
+        //PASO 1 (verificacion de pilotoNuevo)
         for (int i = 0; i < arraypilotos.length; i++) {
-
+            if (arraypilotos[i]==pilotoNuevo){
+                System.out.println("Piloto ya existente ");
+                return false;
+            }
         }
 
-
-
-
-
-
+        //PASO 2 (creacion de arrayCopion)
         Piloto[] arrayCopion= new Piloto[arraypilotos.length+1];
 
-        //arrayCopion copia los datos del primer array
+        //arrayCopion copia los datos del arrayOriginal
         for (int i = 0; i < arraypilotos.length; i++) {
             arrayCopion[i]=arraypilotos[i];
         }
 
-        //
+        //PASO 3 (datos de pilotoNuevo son agregados a la ultima posicion del arrayOriginal
         arrayCopion[arraypilotos.length]=pilotoNuevo;
         return true;
-
-
 
     }
 
