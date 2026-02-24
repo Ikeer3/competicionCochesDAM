@@ -5,6 +5,10 @@ public class Carrera {
     private double vueltasCarrera;
     private Piloto[] arraypilotoPuesto;
     private Piloto[] arraypiloto;
+    private Circuito circuito;
+    private boolean carreraTerminada;
+
+
 
     public Carrera(String temporadaCarrera, boolean yaCorrieron, Circuito tipoCircuito, double vueltasCarrera) {
         this.temporadaCarrera = temporadaCarrera;
@@ -32,21 +36,11 @@ public class Carrera {
     }
 
     public double LongitudTotalHecho(){
+        double longitudCir = circuito.getLongitudCircuito();
 
-
-
-
-
-
-        return 0;
+        return longitudCir * vueltasCarrera;
     }
     public boolean ejecutarCarrera(){
-
-
-
-
-
-
         return false;
     }
 }

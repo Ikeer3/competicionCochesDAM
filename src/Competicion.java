@@ -93,15 +93,17 @@ public class Competicion {
      */
     public boolean arrancarCampeonato(boolean empezada) {
         // TODO Bucle para ejecutarCarrera()
-        while(empezada==false){
 
-                empezada=true;
+        if (empezarCarrera==true){
+            return false;
+        }else {
+            for (int i = 0; i <arrayCarreras.length ; i++) {
+                Carrera carreraActual=arrayCarreras[i];
+                carreraActual.ejecutarCarrera();
+            }
+            empezarCarrera=true;
+            return true;
         }
-        if (empezada==true){
-
-
-        }
-        return false;
     }
 
     /**
