@@ -6,6 +6,15 @@ public class Carrera {
     private Piloto[] arraypilotoPuesto;
     private Piloto[] arraypiloto;
 
+    public Carrera(String temporadaCarrera, boolean yaCorrieron, Circuito tipoCircuito, double vueltasCarrera) {
+        this.temporadaCarrera = temporadaCarrera;
+        this.yaCorrieron = yaCorrieron;
+        this.tipoCircuito = tipoCircuito;
+        this.vueltasCarrera = vueltasCarrera;
+        this.arraypilotoPuesto =  new Piloto[0];
+        this.arraypiloto = new Piloto[0];
+    }
+
     public String getTemporadaCarrera() {
         return temporadaCarrera;
     }

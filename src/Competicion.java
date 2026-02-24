@@ -23,10 +23,17 @@ public class Competicion {
         // TODO Lógica de validación e inserción
 
 
-        //revision del pilot Nuevo que no exista en el array actual
-        for (int i = 0; i < arraypilotos.length; i++) {
-            arraypilotos[i]= 
+        //PASOS QUE SIGUE EL CODIGO:
+        /*
+        1.- PRIMERO COMPRUEBA QUE "PILOTONUEVO NO EX
+         */
 
+
+
+
+
+
+        for (int i = 0; i < arraypilotos.length; i++) {
 
         }
 
@@ -35,11 +42,19 @@ public class Competicion {
 
 
 
+        Piloto[] arrayCopion= new Piloto[arraypilotos.length+1];
+
+        //arrayCopion copia los datos del primer array
+        for (int i = 0; i < arraypilotos.length; i++) {
+            arrayCopion[i]=arraypilotos[i];
+        }
+
+        //
+        arrayCopion[arraypilotos.length]=pilotoNuevo;
+        return true;
 
 
 
-
-        return false;
     }
 
     /**
