@@ -3,6 +3,7 @@ public class Carrera {
     private boolean yaCorrieron;
     private double vueltasCarrera;
 
+
     private Piloto[] arraypilotoPuesto;
     private Piloto[] arraypiloto;
 
@@ -11,18 +12,22 @@ public class Carrera {
     public Circuito getCircuito() {
         return circuito;
     }
+    public Piloto[] getArraypilotoPuesto() {
+        return arraypilotoPuesto;
+    }
 
     private double[] velocidades;
 
 
 
-    public Carrera(String temporadaCarrera, boolean yaCorrieron, Circuito circuito, double vueltasCarrera) {
+    public Carrera(String temporadaCarrera, boolean yaCorrieron, Circuito circuito, double vueltasCarrera, Piloto[] pilotos) {
         this.temporadaCarrera = temporadaCarrera;
         this.circuito = circuito;
         this.yaCorrieron = yaCorrieron;
         this.vueltasCarrera = vueltasCarrera;
-        this.arraypilotoPuesto =  new Piloto[0];
-        this.arraypiloto = new Piloto[0];
+        this.velocidades = new double[pilotos.length];
+        this.arraypilotoPuesto =  new Piloto[pilotos.length];
+        this.arraypiloto = pilotos;
     }
 
     public String getTemporadaCarrera() {
@@ -74,8 +79,16 @@ public class Carrera {
         ordenarPilotos();
         yaCorrieron = true;
 
+        System.out.println("RESULTADO FINAL:");
+
+        for(int i = 0; i < arraypilotoPuesto.length; i++){
+
+            System.out.println((i+1) + "  " + arraypilotoPuesto[i].getNombre() + " " + velocidades[i]);
+        }
 
         return true;
+
+
     }
     private void ordenarPilotos(){
 
@@ -100,7 +113,5 @@ public class Carrera {
 
         }
 
-
     }
-
 }
