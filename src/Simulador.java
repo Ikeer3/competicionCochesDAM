@@ -28,10 +28,62 @@ public class Simulador {
     Circuito Suzuka=new Circuito("Suzuka", 5807);
 
 
-    //Competiciones
+    //Competicion1
 
-    Competicion formulaUno =new Competicion("Formula 1");
-    Competicion formulaDos =new Competicion("Formula 2");
+    Competicion formulaUno2025 =new Competicion("Formula 1");
+
+    //Carreras
+
+    formulaUno2025.anhadirCarrera(Silverstone, 52);
+    formulaUno2025.anhadirCarrera(Spa, 44);
+    formulaUno2025.anhadirCarrera(Suzuka, 53);
+
+    //Pilotos
+
+        formulaUno2025.anhadirPiloto(p1);
+        formulaUno2025.anhadirPiloto(p2);
+        formulaUno2025.anhadirPiloto(p3);
+        formulaUno2025.anhadirPiloto(p4);
+        formulaUno2025.anhadirPiloto(p5);
+        formulaUno2025.anhadirPiloto(p6);
+
+    //Arrancar campeonato
+
+        formulaUno2025.arrancarCampeonato(false);
+
+    //Imprimir clasificacion final
+
+        formulaUno2025.imprimirResultado();
+        formulaUno2025.imprimirResultadoEscuderia();
+
+    //Competicion2
+
+        Competicion formulaUno2024 =new Competicion("Formula 2");
+
+    //Carreras
+
+        formulaUno2024.anhadirCarrera(Baku, 51);
+        formulaUno2024.anhadirCarrera(Spa, 44);
+        formulaUno2024.anhadirCarrera(Silverstone, 52);
+
+    //Pilotos
+
+        formulaUno2024.anhadirPiloto(p1);
+        formulaUno2024.anhadirPiloto(p2);
+        formulaUno2024.anhadirPiloto(p3);
+        formulaUno2024.anhadirPiloto(p4);
+        formulaUno2024.anhadirPiloto(p5);
+        formulaUno2024.anhadirPiloto(p6);
+
+    //Arrancar campeonato
+
+        formulaUno2024.arrancarCampeonato(false);
+
+    //Imprimir clasificacion final
+
+        formulaUno2024.imprimirResultado();
+        formulaUno2024.imprimirResultadoEscuderia();
+
 
     }
 }

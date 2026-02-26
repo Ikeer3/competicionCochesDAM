@@ -1,22 +1,22 @@
 public class Circuito {
-    private String NombreCircuito;
-    private double LongitudCircuito;
+    private String nombreCircuito;
+    private double longitudCircuito;
     private Carrera[] carreras;
     private int contadorCarreras;
 
     public Circuito(String nombreCircuito, double longitudCircuito) {
-        this.NombreCircuito = nombreCircuito;
-        this.LongitudCircuito = longitudCircuito;
+        this.nombreCircuito = nombreCircuito;
+        this.longitudCircuito = longitudCircuito;
         this.carreras=new Carrera[0];
         this.contadorCarreras=0;
     }
 
     public String getNombreCircuito() {
-        return NombreCircuito;
+        return nombreCircuito;
     }
 
     public double getLongitudCircuito() {
-        return LongitudCircuito;
+        return longitudCircuito;
     }
 
     public int getContadorCarreras() {

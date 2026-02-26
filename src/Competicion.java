@@ -122,7 +122,7 @@ public class Competicion {
      * Calcula e imprime por consola la clasificación final a nivel de escuderías,
      * sumando los puntos de todos los pilotos de cada escudería.
      */
-    public void imprimirResultadoEscudería() {
+    public void imprimirResultadoEscuderia() {
         // TODO: Lógica de extracción de equipos, suma de puntos y clasificación
     }
 }
