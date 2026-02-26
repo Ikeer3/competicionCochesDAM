@@ -13,14 +13,14 @@ public class Piloto{
         this.coche=coche;
 
         //Relacion habilidad
-        switch (habilidadString){
-            case "Excelente":
+        switch (habilidadString.toLowerCase()){
+            case "excelente":
                 this.habilidad= rand.nextDouble(0.9,1.1);
                 break;
-            case "Bueno":
+            case "bueno":
                 this.habilidad=rand.nextDouble(0.8,0.9);
                 break;
-            case "Mediocre":
+            case "mediocre":
                 this.habilidad= rand.nextDouble(0.7,0.8);
                 break;
             default:
