@@ -94,6 +94,10 @@ public class Competicion {
         }
         nuevo[nuevo.length - 1] = nuevaCarrera;
         arrayCarreras = nuevo;
+
+        // Registramos la carrera en el circuito
+        circuito.anhadirCarreraCircuito(nuevaCarrera);
+        System.out.println("Carrera en " + circuito.getNombreCircuito() + " añadida correctamente");
         
         return true;
     }
