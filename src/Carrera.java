@@ -40,6 +40,7 @@ public class Carrera {
         double longitudCir = circuito.getLongitudCircuito();
         return longitudCir * vueltasCarrera;
     }
+
     public boolean ejecutarCarrera(){
         if(yaCorrieron){
             System.out.println("Ya se ha corrido este circuito");
@@ -53,9 +54,8 @@ public class Carrera {
             Piloto piloto = arraypiloto[i];
 
             double velocidad = piloto.velocidadMedia();
-            double kmTotales = LongitudTotalHecho();
 
-            if(!piloto.getCoche().acabaCarrera((int)kmTotales)){
+            if(!piloto.getCoche().acabaCarrera((int)LongitudTotalHecho())){
 
                 velocidad = 0;
 
@@ -66,7 +66,6 @@ public class Carrera {
                 System.out.println(piloto.getNombre() + " velocidad media " + velocidad);
 
             }
-
 
             velocidades[i] = velocidad;
 
