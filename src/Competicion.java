@@ -77,8 +77,8 @@ public class Competicion {
         }
 
         // Comprobar si ya existe una carrera en el mismo circuito
-        for (int i = 0; i < arrayCarreras.length; i++) {
-            if (arrayCarreras[i].getTipoCircuito().getNombreCircuito().equals(circuito.getNombreCircuito())) {
+        for (Carrera carrera:arrayCarreras) {
+            if (carrera.getCircuito()==circuito) {
                 System.out.println("No se ha podido añadir la carrera. Ya hay una programada en el circuito "
                         + circuito.getNombreCircuito());
                 return false;
