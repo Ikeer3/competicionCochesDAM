@@ -5,6 +5,11 @@ public class Carrera {
 
 
     private Piloto[] arraypilotoPuesto;
+
+    public Piloto[] getArraypiloto() {
+        return arraypiloto;
+    }
+
     private Piloto[] arraypiloto;
 
     private Circuito circuito;
