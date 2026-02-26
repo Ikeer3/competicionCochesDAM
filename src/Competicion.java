@@ -68,7 +68,6 @@ public class Competicion {
      * o ya hay otra carrera en el mismo circuito en el campeonato.
      */
     public boolean anhadirCarrera(Circuito circuito, int vueltas) {
-        // TODO Lógica de validación e inserción
         // Comprobar si el campeonato ya ha empezado
         if (empezarCarrera) {
             System.out.println("No se ha podido añadir la carrera en " + circuito.getNombreCircuito() +
@@ -86,7 +85,7 @@ public class Competicion {
         }
 
         // Creamos la carrera (con los pilotos que haya en ese momento)
-        Carrera nuevaCarrera = new Carrera(nombreCompeticion, false, circuito, vueltas);
+        Carrera nuevaCarrera = new Carrera(nombreCompeticion, false, circuito, vueltas, arraypilotos);
 
         Carrera[] nuevo = new Carrera[arrayCarreras.length + 1];
         for (int i = 0; i < arrayCarreras.length; i++) {
@@ -139,5 +138,6 @@ public class Competicion {
      */
     public void imprimirResultadoEscuderia() {
         // TODO: Lógica de extracción de equipos, suma de puntos y clasificación
+
     }
 }
