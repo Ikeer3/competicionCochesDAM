@@ -15,6 +15,10 @@ public class Coche {
         return velocidadMaxima;
     }
 
+    public String getEscuderia() {
+        return escuderia;
+    }
+
     /**
      * Calcula si el coche se rompe basado en la distancia
      * @param kilometros número entero

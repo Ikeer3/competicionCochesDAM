@@ -98,7 +98,7 @@ public class Competicion {
         // Registramos la carrera en el circuito
         circuito.anhadirCarreraCircuito(nuevaCarrera);
         System.out.println("Carrera en " + circuito.getNombreCircuito() + " añadida correctamente");
-        
+
         return true;
     }
 
