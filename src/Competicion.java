@@ -84,7 +84,18 @@ public class Competicion {
                 return false;
             }
         }
-        return false;
+
+        // Creamos la carrera (con los pilotos que haya en ese momento)
+        Carrera nuevaCarrera = new Carrera(nombreCompeticion, false, circuito, vueltas);
+
+        Carrera[] nuevo = new Carrera[arrayCarreras.length + 1];
+        for (int i = 0; i < arrayCarreras.length; i++) {
+            nuevo[i] = arrayCarreras[i];
+        }
+        nuevo[nuevo.length - 1] = nuevaCarrera;
+        arrayCarreras = nuevo;
+        
+        return true;
     }
 
     /**
