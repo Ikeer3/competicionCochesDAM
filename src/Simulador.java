@@ -31,7 +31,7 @@ public class Simulador {
     //Competiciones
 
     Competicion formulaUno =new Competicion("Formula 1");
-    Competicion formulaDos =new Competicion("Formula 2");c
+    Competicion formulaDos =new Competicion("Formula 2");
 
     }
 }
