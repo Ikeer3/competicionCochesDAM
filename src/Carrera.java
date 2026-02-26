@@ -8,6 +8,10 @@ public class Carrera {
 
     private Circuito circuito;
 
+    public Circuito getCircuito() {
+        return circuito;
+    }
+
     private double[] velocidades;
 
 
