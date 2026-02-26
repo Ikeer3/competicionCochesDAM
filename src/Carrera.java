@@ -48,6 +48,31 @@ public class Carrera {
         System.out.println("LA CARRERA EMPIEZA: ");
         System.out.print(""+circuito.getNombreCircuito()+"");
 
+        for(int i = 0; i < arraypiloto.length; i++){
+
+            Piloto piloto = arraypiloto[i];
+
+            double velocidad = piloto.velocidadMedia();
+            double kmTotales = LongitudTotalHecho();
+
+            if(!piloto.getCoche().acabaCarrera((int)kmTotales)){
+
+                velocidad = 0;
+
+                System.out.println(piloto.getNombre() + " ha abandonado");
+            }
+
+            else{
+                System.out.println(piloto.getNombre() + " velocidad media " + velocidad);
+
+            }
+
+
+            velocidades[i] = velocidad;
+
+            arraypilotoPuesto[i] = piloto;
+
+        }
 
         return true;
     }
