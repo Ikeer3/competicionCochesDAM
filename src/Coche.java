@@ -31,7 +31,7 @@ public class Coche {
 
         for(int i=0;i<tramos;i++){
             double probabilidadAleatoria= rand.nextDouble();
-            if(probabilidadAleatoria<fiabilidad){
+            if(probabilidadAleatoria>fiabilidad){
                 return false;
             }
         }

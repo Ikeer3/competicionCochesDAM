@@ -11,6 +11,7 @@ public class Piloto{
         this.nombrePiloto = nombre;
         this.edadPiloto = edad;
         this.coche=coche;
+        Random rand=new Random();
 
         //Relacion habilidad
         switch (habilidadString.toLowerCase()){
@@ -50,12 +51,12 @@ public class Piloto{
         return coche;
     }
 
-    Random rand=new Random();
     public String getNombre() {
         return nombrePiloto;
     }
 
     public double velocidadMedia(){
-        return coche.getVelocidadMaxima()*habilidad*rand.nextDouble(0.9,1.1);
+        Random rand=new Random();
+        return coche.getVelocidadMaxima()*this.habilidad*rand.nextDouble(0.9,1.1);
     }
 }
