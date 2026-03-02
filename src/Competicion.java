@@ -138,11 +138,33 @@ public class Competicion {
      */
     public void imprimirResultado() {
         // TODO Lógica de puntuación y clasificación de pilotos
+        if(empezarCarrera) {
+            int[] arrayPuntos = new int[arrayPilotos.length];
 
-        System.out.println("");
-
-
+            for (int i = 0; i < arrayCarreras.length; i++) {
+                calculoResultadoPuntos(arrayCarreras[i],arrayPuntos);
+            }
+        }else {
+            System.out.println("La Competicion aun no finaliza");
+        }
     }
+
+    private void calculoResultadoPuntos(Carrera c, int[] puntos ){
+        Piloto primerLugar=c.getArraypilotoPuesto()[0];
+        Piloto segundoLugar=c.getArraypilotoPuesto()[1];
+        Piloto tercerLugar=c.getArraypilotoPuesto()[2];
+
+        for (int i = 0; i < arrayPilotos.length; i++) {
+            if (arrayPilotos[i]==primerLugar){
+                puntos[i]=puntos[i]+10;
+            }else if (arrayPilotos[i]==segundoLugar) {
+                puntos[i]=puntos[i]+8;
+            } else if (arrayPilotos[i]==tercerLugar) {
+                puntos[i]=puntos[i]+5;
+            }
+        }
+    }
+
 
     /**
      * Calcula e imprime por consola la clasificación final a nivel de escuderías,
