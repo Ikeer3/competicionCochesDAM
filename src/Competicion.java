@@ -12,6 +12,14 @@ public class Competicion {
         this.empezarCarrera = false;
     }
 
+    public Piloto[] getArrayPilotos() {
+        return arrayPilotos;
+    }
+
+    public boolean isEmpezarCarrera() {
+        return empezarCarrera;
+    }
+
     /**
      * Añade un piloto a la lista de participantes de la competición. Lista la cual es array de pilotos
      * Imprime un mensaje informando del resultado de la operación.
