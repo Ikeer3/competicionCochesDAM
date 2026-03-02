@@ -16,7 +16,7 @@ public class Competicion {
         return arrayPilotos;
     }
 
-    public boolean isEmpezarCarrera() {
+    public boolean getEmpezarCarrera() {
         return empezarCarrera;
     }
 
@@ -43,7 +43,7 @@ public class Competicion {
         3.- TERCERO ARRAYCOPION AGREGA EN LA ULTIMA POSICION ,AGREGA AL PILOTONUEVO
          */
             if (empezarCarrera ==true){
-                System.out.println("Carrera ya ha comenzado (No se puede inscribir piloto)");
+                System.out.println("\nCarrera ya ha comenzado (No se puede inscribir piloto)");
                 return false;
             }else {
 
@@ -68,7 +68,7 @@ public class Competicion {
                 for (Carrera c: arrayCarreras) {
                     c.anhadirPiloto(pilotoNuevo);
                 }
-                System.out.println("Piloto: "+pilotoNuevo.getNombrePiloto()+" es Ingresado al Campeonato y la Carrera Correctamente 👌");
+                System.out.println("Piloto: "+pilotoNuevo.getNombrePiloto()+"ha sido añadido al Campeonato y a la Carrera Correctamente");
                 return true;
             }//si es emoji lo coloque yo no una IA (Carlos Raul)
 
@@ -110,7 +110,7 @@ public class Competicion {
 
         // Registramos la carrera en el circuito
         circuito.anhadirCarreraCircuito(nuevaCarrera);
-        System.out.println("Carrera en " + circuito.getNombreCircuito() + " añadida correctamente");
+        System.out.println("Carrera: " + circuito.getNombreCircuito() + "ha sido añadida correctamente");
 
         return true;
     }
@@ -150,8 +150,6 @@ public class Competicion {
             for (int i = 0; i < arrayPilotos.length; i++) {
                 System.out.println((i+1)+"º LUGAR CON: "+arrayPuntos[i]+" PUNTOS EL PILOTO: "+arrayPilotos[i].getNombrePiloto());
             }
-
-
         }else {
             System.out.println("La Competicion aun no finaliza");
         }
@@ -163,9 +161,9 @@ public class Competicion {
     }
 
     private void calculoResultadoPuntos(Carrera c, int[] puntos ) {
-        Piloto primerLugar = c.getArraypilotoPuesto()[0];
-        Piloto segundoLugar = c.getArraypilotoPuesto()[1];
-        Piloto tercerLugar = c.getArraypilotoPuesto()[2];
+        Piloto primerLugar = c.getArrayPilotoPuesto()[0];
+        Piloto segundoLugar = c.getArrayPilotoPuesto()[1];
+        Piloto tercerLugar = c.getArrayPilotoPuesto()[2];
 
         for (int i = 0; i < arrayPilotos.length; i++) {
             if (arrayPilotos[i] == primerLugar) {
@@ -185,6 +183,12 @@ public class Competicion {
                     int mediador = puntos[j];
                     puntos[j] = puntos[j + 1];
                     puntos[j + 1] = mediador;
+
+                    //Intercambiar el array de Pilotos junto al de puntos ya que son paralelos
+
+                    Piloto mediadorPilotos = arrayPilotos[j];
+                    arrayPilotos[j] = arrayPilotos[j + 1];
+                    arrayPilotos[j + 1] = mediadorPilotos;
                 }
             }
         }
@@ -227,9 +231,9 @@ public class Competicion {
 
         // Repartir los puntos de cada carrera
         for (Carrera carrera:arrayCarreras) {
-            Piloto primerLugar = carrera.getArraypilotoPuesto()[0];
-            Piloto segundoLugar = carrera.getArraypilotoPuesto()[1];
-            Piloto tercerLugar = carrera.getArraypilotoPuesto()[2];
+            Piloto primerLugar = carrera.getArrayPilotoPuesto()[0];
+            Piloto segundoLugar = carrera.getArrayPilotoPuesto()[1];
+            Piloto tercerLugar = carrera.getArrayPilotoPuesto()[2];
 
             int indiceEscuderia1 = 0;
             int indiceEscuderia2 = 0;

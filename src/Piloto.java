@@ -28,35 +28,18 @@ public class Piloto{
                 this.habilidad=0.6;
                 break;
         }
-
     }
 
     public String getNombrePiloto() {
         return nombrePiloto;
     }
 
-    public int getEdadPiloto() {
-        return edadPiloto;
-    }
-
-    public double getHabilidad() {
-        return habilidad;
-    }
-
-    public String getHabilidadString() {
-        return habilidadString;
-    }
-
     public Coche getCoche() {
         return coche;
     }
 
-    public String getNombre() {
-        return nombrePiloto;
-    }
-
     public double velocidadMedia(){
         Random rand=new Random();
-        return coche.getVelocidadMaxima()*this.habilidad*rand.nextDouble(0.9,1.1);
+        return coche.getVelocidadMaxima()*habilidad*rand.nextDouble(0.9,1.1);
     }
 }

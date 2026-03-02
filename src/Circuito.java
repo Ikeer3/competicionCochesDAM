@@ -38,7 +38,7 @@ public class Circuito {
     }
 
     public int obtenerCarrerasTotalesCircuito() {
-
-        return this.contadorCarreras;
+        return contadorCarreras;
     }
+
 }
