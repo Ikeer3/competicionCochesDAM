@@ -54,7 +54,7 @@ public class Carrera {
                 velocidad = 0;
                 System.out.println(piloto.getNombrePiloto() + " ha abandonado");
             } else {
-                System.out.println(piloto.getNombrePiloto() + " --- Velocidad media: " + velocidad);
+                System.out.printf(piloto.getNombrePiloto() + " --- Velocidad media: %.2f\n", velocidad);
             }
             velocidades[i] = velocidad;
             arrayPilotoPuesto[i] = piloto;

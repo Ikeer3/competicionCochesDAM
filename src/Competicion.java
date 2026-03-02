@@ -60,7 +60,7 @@ public class Competicion {
                     c.anhadirPiloto(pilotoNuevo);
                 }
 
-                System.out.println("Piloto: " + pilotoNuevo.getNombrePiloto() + " ha sido añadido al Campeonato y a la Carrera correctamente");
+                System.out.print("\nPiloto: " + pilotoNuevo.getNombrePiloto() + " ha sido añadido al Campeonato y a la Carrera correctamente");
                 return true;
             }//si es emoji lo coloque yo no una IA (Carlos Raul)
 
