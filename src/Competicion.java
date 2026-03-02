@@ -63,9 +63,13 @@ public class Competicion {
                 }
                 //PASO 3 (datos de pilotoNuevo son agregados a la ultima posicion del arrayOriginal
                 arrayCopion[arrayPilotos.length] = pilotoNuevo;
+                arrayPilotos = arrayCopion;
+                for (Carrera c: arrayCarreras) {
+                    c.anhadirPiloto(pilotoNuevo);
+                }
                 return true;
-
             }
+
     }
 
     /**
