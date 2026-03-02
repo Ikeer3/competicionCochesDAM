@@ -9,7 +9,7 @@ public class Coche {
         Random rand=new Random();
         this.escuderia = escuderia;
         this.velocidadMaxima = velocidadMaxima;
-        this.fiabilidad = rand.nextFloat(0.9F,1);
+        this.fiabilidad = rand.nextFloat(0.9F,1.1F);
     }
 
     public double getVelocidadMaxima() {
