@@ -22,6 +22,8 @@ public class Carrera {
     }
 
     private double[] velocidades;
+    private Piloto[] arraypilotos;
+    private boolean empezarCarrera;
 
 
 
@@ -119,4 +121,31 @@ public class Carrera {
         }
 
     }
+
+    public boolean anhadirPiloto(Piloto pilotoNuevo) {
+
+        if (empezarCarrera == true){
+            System.out.println("Carrera ya ha comenzado (No se puede inscribir piloto)");
+            return false;
+        }else {
+
+
+            for (int i = 0; i < arraypilotos.length; i++) {
+                if (arraypilotos[i] == pilotoNuevo) {
+                    System.out.println("Piloto ya existente ");
+                    return false;
+                }
+            }
+
+            Piloto[] arrayCopion = new Piloto[arraypilotos.length + 1];
+
+            for (int i = 0; i < arraypilotos.length; i++) {
+                arrayCopion[i] = arraypilotos[i];
+            }
+            arrayCopion[arraypilotos.length] = pilotoNuevo;
+            return true;
+
+        }
+    }
+
 }
