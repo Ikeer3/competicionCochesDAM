@@ -3,12 +3,12 @@ public class Simulador {
 
 
         //Coches
-        Coche A1=new Coche("Aston Martin",317,0.5);
-        Coche A2=new Coche("Aston Martin",315,0.5);
-        Coche Rb1=new Coche("Red Bull",327,0.8);
-        Coche Rb2=new Coche("Red bull",329,0.8);
-        Coche F1=new Coche("Ferrari",323,0.7);
-        Coche F2=new Coche("Ferrari",325,0.7);
+        Coche A1=new Coche("Aston Martin",317);
+        Coche A2=new Coche("Aston Martin",315);
+        Coche Rb1=new Coche("Red Bull",327);
+        Coche Rb2=new Coche("Red bull",329);
+        Coche F1=new Coche("Ferrari",323);
+        Coche F2=new Coche("Ferrari",325);
 
 
         //Pilotos
@@ -22,10 +22,10 @@ public class Simulador {
 
         //Circuitos
 
-        Circuito Spa=new Circuito("Spa-Francorchamps", 7004);
-        Circuito Baku=new Circuito("Callejero de Baku", 6003);
-        Circuito Silverstone=new Circuito("Silverstone", 5891);
-        Circuito Suzuka=new Circuito("Suzuka", 5807);
+        Circuito Spa=new Circuito("Spa-Francorchamps", 10);
+        Circuito Baku=new Circuito("Callejero de Baku", 5);
+        Circuito Silverstone=new Circuito("Silverstone", 15);
+        Circuito Suzuka=new Circuito("Suzuka", 8);
 
 
         //Competicion1
@@ -34,9 +34,9 @@ public class Simulador {
 
         //Carreras
 
-        formulaUno2025.anhadirCarrera(Silverstone, 52);
-        formulaUno2025.anhadirCarrera(Spa, 44);
-        formulaUno2025.anhadirCarrera(Suzuka, 53);
+        formulaUno2025.anhadirCarrera(Silverstone, 5);
+        formulaUno2025.anhadirCarrera(Spa, 8);
+        formulaUno2025.anhadirCarrera(Suzuka, 5);
 
         //Pilotos
 
@@ -62,9 +62,9 @@ public class Simulador {
 
         //Carreras
 
-        formulaUno2024.anhadirCarrera(Baku, 51);
-        formulaUno2024.anhadirCarrera(Spa, 44);
-        formulaUno2024.anhadirCarrera(Silverstone, 52);
+        formulaUno2024.anhadirCarrera(Baku, 5);
+        formulaUno2024.anhadirCarrera(Spa, 4);
+        formulaUno2024.anhadirCarrera(Silverstone, 5);
 
         //Pilotos
 

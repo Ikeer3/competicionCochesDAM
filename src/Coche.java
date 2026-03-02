@@ -2,13 +2,14 @@ import java.util.Random;
 public class Coche {
 
     private String escuderia;
-    private double velocidadMaxima;
-    private double fiabilidad;
+    private int velocidadMaxima;
+    private float fiabilidad;
 
-    public Coche(String escuderia, double velocidadMaxima, double fiabilidad) {
+    public Coche(String escuderia, int velocidadMaxima) {
+        Random rand=new Random();
         this.escuderia = escuderia;
         this.velocidadMaxima = velocidadMaxima;
-        this.fiabilidad = fiabilidad;
+        this.fiabilidad = rand.nextFloat(0.9F,1);
     }
 
     public double getVelocidadMaxima() {
@@ -30,7 +31,7 @@ public class Coche {
         int tramos =(kilometros/5);
 
         for(int i=0;i<tramos;i++){
-            double probabilidadAleatoria= rand.nextDouble();
+            float probabilidadAleatoria= rand.nextFloat(0,1);
             if(probabilidadAleatoria>fiabilidad){
                 return false;
             }
