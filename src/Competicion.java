@@ -174,6 +174,17 @@ public class Competicion {
             int indiceEscuderia1 = 0;
             int indiceEscuderia2 = 0;
             int indiceEscuderia3 = 0;
+
+            // Generamos el bucle sobre el array de escuderías para encontrar qué índice tiene cada una
+            for (int i = 0; i < escuderias.length; i++) {
+                if (escuderias[i].equals(primerLugar.getCoche().getEscuderia())) {
+                    indiceEscuderia1 = i;
+                } else if (escuderias[i].equals(segundoLugar.getCoche().getEscuderia())) {
+                    indiceEscuderia2 = i;
+                } else if (escuderias[i].equals(tercerLugar.getCoche().getEscuderia())) {
+                    indiceEscuderia3 = i;
+                }
+            }
         }
     }
 }
