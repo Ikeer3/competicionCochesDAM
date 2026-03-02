@@ -145,14 +145,9 @@ public class Competicion {
                 calculoResultadoPuntos(arrayCarreras[i],arrayPuntos);
             }
             System.out.println("Resultado de Competicion: ");
-            System.out.println(
-                        
-
-
-
-
-            );
-
+            for (int i = 0; i < arrayPilotos.length; i++) {
+                System.out.println("El Piloto:"+(i+1)+" que es "+arrayPilotos[i].getNombrePiloto()+" Puntuacion: "+arrayPuntos[i]);
+            }
 
 
         }else {
