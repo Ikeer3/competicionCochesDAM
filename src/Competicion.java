@@ -191,5 +191,24 @@ public class Competicion {
             puntosEscuderias[indiceEscuderia2] = puntosEscuderias[indiceEscuderia2] + 8;
             puntosEscuderias[indiceEscuderia3] = puntosEscuderias[indiceEscuderia3] + 5;
         }
+
+        // Ordenamos los arrays con el metodo Burbuja de mayor a menor
+        for (int i = 0; i < escuderias.length - 1; i++) {
+            for (int j = 0; j < escuderias.length - 1 - i; j++) {
+                // Si el de la derecha tiene más puntos que el de la izquierda, los intercambiamos
+                if (puntosEscuderias[j] < puntosEscuderias[j + 1]) {
+
+                    // Intercambiamos los puntos
+                    int puntosTemp = puntosEscuderias[j];
+                    puntosEscuderias[j] = puntosEscuderias[j + 1];
+                    puntosEscuderias[j + 1] = puntosTemp;
+
+                    // Intercambiamos los nombres de las escuderías a la vez
+                    String escuderiaTemp = escuderias[j];
+                    escuderias[j] = escuderias[j + 1];
+                    escuderias[j + 1] = escuderiaTemp;
+                }
+            }
+        }
     }
 }
