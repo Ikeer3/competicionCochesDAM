@@ -210,5 +210,9 @@ public class Competicion {
                 }
             }
         }
+
+        for (int i = 0; i < escuderias.length; i++) {
+            System.out.println((i + 1) + ".- " + escuderias[i] + " con " + puntosEscuderias[i] + " puntos.");
+        }
     }
 }
