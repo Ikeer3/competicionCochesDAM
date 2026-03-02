@@ -1,13 +1,13 @@
 public class Competicion {
 
     private String nombreCompeticion;
-    private Piloto[] arraypilotos;
+    private Piloto[] arrayPilotos;
     private Carrera[] arrayCarreras;
     private boolean empezarCarrera;
 
     public Competicion(String nombre) {
         this.nombreCompeticion = nombre;
-        this.arraypilotos = new Piloto[0];
+        this.arrayPilotos = new Piloto[0];
         this.arrayCarreras = new Carrera[0];
         this.empezarCarrera = false;
     }
@@ -41,20 +41,20 @@ public class Competicion {
 
                 //PASOS DE pilotoNuevo:
                 //PASO 1 (verificacion de pilotoNuevo)
-                for (int i = 0; i < arraypilotos.length; i++) {
-                    if (arraypilotos[i] == pilotoNuevo) {
+                for (int i = 0; i < arrayPilotos.length; i++) {
+                    if (arrayPilotos[i] == pilotoNuevo) {
                         System.out.println("Piloto ya existente ");
                         return false;
                     }
                 }
                 //PASO 2 (creacion de arrayCopion)
-                Piloto[] arrayCopion = new Piloto[arraypilotos.length + 1];
+                Piloto[] arrayCopion = new Piloto[arrayPilotos.length + 1];
                 //arrayCopion copia los datos del arrayOriginal
-                for (int i = 0; i < arraypilotos.length; i++) {
-                    arrayCopion[i] = arraypilotos[i];
+                for (int i = 0; i < arrayPilotos.length; i++) {
+                    arrayCopion[i] = arrayPilotos[i];
                 }
                 //PASO 3 (datos de pilotoNuevo son agregados a la ultima posicion del arrayOriginal
-                arrayCopion[arraypilotos.length] = pilotoNuevo;
+                arrayCopion[arrayPilotos.length] = pilotoNuevo;
                 return true;
 
             }
@@ -85,7 +85,7 @@ public class Competicion {
         }
 
         // Creamos la carrera (con los pilotos que haya en ese momento)
-        Carrera nuevaCarrera = new Carrera(nombreCompeticion, false, circuito, vueltas, arraypilotos);
+        Carrera nuevaCarrera = new Carrera(nombreCompeticion, false, circuito, vueltas, arrayPilotos);
 
         Carrera[] nuevo = new Carrera[arrayCarreras.length + 1];
         for (int i = 0; i < arrayCarreras.length; i++) {
@@ -138,6 +138,9 @@ public class Competicion {
      */
     public void imprimirResultadoEscuderia() {
         // TODO: Lógica de extracción de equipos, suma de puntos y clasificación
+        System.out.println("\n---CLASIFICACIÓN FINAL POR ESCUDERÍAS: " + nombreCompeticion + "---");
 
+        String[] escuderias = new String[0];
+        int[] puntosEscuderias = new int[arrayPilotos.length];
     }
 }
