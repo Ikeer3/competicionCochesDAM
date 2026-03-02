@@ -164,5 +164,16 @@ public class Competicion {
                 escuderias = temp;
             }
         }
+
+        // Repartir los puntos de cada carrera
+        for (Carrera carrera:arrayCarreras) {
+            Piloto primerLugar = carrera.getArraypilotoPuesto()[0];
+            Piloto segundoLugar = carrera.getArraypilotoPuesto()[1];
+            Piloto tercerLugar = carrera.getArraypilotoPuesto()[2];
+
+            int indiceEscuderia1 = 0;
+            int indiceEscuderia2 = 0;
+            int indiceEscuderia3 = 0;
+        }
     }
 }
