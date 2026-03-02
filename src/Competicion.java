@@ -185,6 +185,11 @@ public class Competicion {
                     indiceEscuderia3 = i;
                 }
             }
+
+            // Sumamos los puntos usando los índices que acabamos de encontrar
+            puntosEscuderias[indiceEscuderia1] = puntosEscuderias[indiceEscuderia1] + 10;
+            puntosEscuderias[indiceEscuderia2] = puntosEscuderias[indiceEscuderia2] + 8;
+            puntosEscuderias[indiceEscuderia3] = puntosEscuderias[indiceEscuderia3] + 5;
         }
     }
 }
