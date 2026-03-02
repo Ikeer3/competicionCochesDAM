@@ -144,9 +144,25 @@ public class Competicion {
             for (int i = 0; i < arrayCarreras.length; i++) {
                 calculoResultadoPuntos(arrayCarreras[i],arrayPuntos);
             }
+            System.out.println("Resultado de Competicion: ");
+            System.out.println(
+                        
+
+
+
+
+            );
+
+
+
         }else {
             System.out.println("La Competicion aun no finaliza");
         }
+
+
+
+
+
     }
 
     private void calculoResultadoPuntos(Carrera c, int[] puntos ){
@@ -164,6 +180,8 @@ public class Competicion {
             }
         }
     }
+
+
 
 
     /**
