@@ -11,6 +11,7 @@ public class Piloto{
         this.nombrePiloto = nombre;
         this.edadPiloto = edad;
         this.coche=coche;
+        this.habilidadString = habilidadString;
         Random rand=new Random();
 
         //Relacion habilidad
@@ -36,6 +37,14 @@ public class Piloto{
 
     public Coche getCoche() {
         return coche;
+    }
+
+    public int getEdadPiloto() {
+        return edadPiloto;
+    }
+
+    public String getHabilidadString() {
+        return habilidadString;
     }
 
     public double velocidadMedia(){

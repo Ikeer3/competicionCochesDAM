@@ -19,10 +19,6 @@ public class Circuito {
         return longitudCircuito;
     }
 
-    public int getContadorCarreras() {
-        return contadorCarreras;
-    }
-
     public void anhadirCarreraCircuito(Carrera carrera) {
         //Creamos array con una posicion mas que el anterior
         Carrera[] nuevoArray=new Carrera[this.carreras.length+1];

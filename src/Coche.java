@@ -26,7 +26,6 @@ public class Coche {
      * @return si el coche se ha roto
      */
     public boolean acabaCarrera(int kilometros) {
-        // TODO Implementar lógica de probablilidad
         Random rand=new Random();
         int tramos =(kilometros/5);
 

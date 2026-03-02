@@ -1,12 +1,16 @@
 public class Simulador {
     public static void main(String[] args) {
 
+        System.out.println("\n==========================================================");
+        System.out.println("   🏁🏎️  S I M U L A D O R  D E  C A R R E R A S  🏎️🏁    ");
+        System.out.println("==========================================================\n");
+        System.out.println("Cargando escuderías, pilotos y circuitos...\n");
 
         //Coches
         Coche A1=new Coche("Aston Martin",317);
         Coche A2=new Coche("Aston Martin",315);
         Coche Rb1=new Coche("Red Bull",327);
-        Coche Rb2=new Coche("Red bull",329);
+        Coche Rb2=new Coche("Red Bull",329);
         Coche F1=new Coche("Ferrari",323);
         Coche F2=new Coche("Ferrari",325);
 
@@ -21,25 +25,24 @@ public class Simulador {
 
 
         //Circuitos
-
         Circuito Spa=new Circuito("Spa-Francorchamps", 10);
         Circuito Baku=new Circuito("Callejero de Baku", 5);
         Circuito Silverstone=new Circuito("Silverstone", 15);
         Circuito Suzuka=new Circuito("Suzuka", 8);
 
+        System.out.println("===============================================");
+        System.out.println("   🏆 CONFIGURANDO CAMPEONATO: FORMULA 1 🏆   ");
+        System.out.println("===============================================");
 
         //Competicion1
-
         Competicion formulaUno2025 =new Competicion("Formula 1");
 
         //Carreras
-
         formulaUno2025.anhadirCarrera(Silverstone, 5);
         formulaUno2025.anhadirCarrera(Spa, 8);
         formulaUno2025.anhadirCarrera(Suzuka, 5);
 
         //Pilotos
-
         formulaUno2025.anhadirPiloto(p1);
         formulaUno2025.anhadirPiloto(p2);
         formulaUno2025.anhadirPiloto(p3);
@@ -48,26 +51,25 @@ public class Simulador {
         formulaUno2025.anhadirPiloto(p6);
 
         //Arrancar campeonato
-
         formulaUno2025.arrancarCampeonato(false);
 
         //Imprimir clasificacion final
-
         formulaUno2025.imprimirResultado();
         formulaUno2025.imprimirResultadoEscuderia();
 
-        //Competicion2
+        System.out.println("\n===============================================");
+        System.out.println("   🏆 CONFIGURANDO CAMPEONATO: FORMULA 2 🏆   ");
+        System.out.println("===============================================");
 
+        //Competicion2
         Competicion formulaUno2024 =new Competicion("Formula 2");
 
         //Carreras
-
         formulaUno2024.anhadirCarrera(Baku, 5);
         formulaUno2024.anhadirCarrera(Spa, 4);
         formulaUno2024.anhadirCarrera(Silverstone, 5);
 
         //Pilotos
-
         formulaUno2024.anhadirPiloto(p1);
         formulaUno2024.anhadirPiloto(p2);
         formulaUno2024.anhadirPiloto(p3);
@@ -75,15 +77,18 @@ public class Simulador {
         formulaUno2024.anhadirPiloto(p5);
         formulaUno2024.anhadirPiloto(p6);
 
-        //Arrancar campeonato
-
+        // Arrancar campeonato
         formulaUno2024.arrancarCampeonato(false);
 
-        //Imprimir clasificacion final
-
+        // Imprimir clasificacion final
         formulaUno2024.imprimirResultado();
         formulaUno2024.imprimirResultadoEscuderia();
 
-
+        // Estadísticas Históricas
+        System.out.println("\n🌎 --- ESTADÍSTICAS DE LOS CIRCUITOS ---");
+        System.out.println(Spa.getNombreCircuito() + " ha albergado " + Spa.obtenerCarrerasTotalesCircuito() + " carreras");
+        System.out.println(Baku.getNombreCircuito() + " ha albergado " + Baku.obtenerCarrerasTotalesCircuito() + " carreras");
+        System.out.println(Silverstone.getNombreCircuito() + " ha albergado " + Silverstone.obtenerCarrerasTotalesCircuito() + " carreras");
+        System.out.println(Suzuka.getNombreCircuito() + " ha albergado " + Suzuka.obtenerCarrerasTotalesCircuito() + " carreras");
     }
 }

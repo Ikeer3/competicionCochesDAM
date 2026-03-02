@@ -12,14 +12,6 @@ public class Competicion {
         this.empezarCarrera = false;
     }
 
-    public Piloto[] getArrayPilotos() {
-        return arrayPilotos;
-    }
-
-    public boolean getEmpezarCarrera() {
-        return empezarCarrera;
-    }
-
     /**
      * Añade un piloto a la lista de participantes de la competición. Lista la cual es array de pilotos
      * Imprime un mensaje informando del resultado de la operación.
@@ -28,7 +20,6 @@ public class Competicion {
      * (si la competicion ya empezo no se puede incluir ningun piloto// ya existe no se agregara)
      */
     public boolean anhadirPiloto(Piloto pilotoNuevo) {
-        // TODO Lógica de validación e inserción
         //PASOS QUE SIGUE EL CODIGO: (empezarCarrera)
         /*
         1.- PRIMERO COMPROBAMOS QUE NO HAYA EMPEAZADO LA CARRERA SI LA CARRERA COMENZO ENTONCES RETURN FALSE
@@ -42,10 +33,10 @@ public class Competicion {
         2.- SEGUNDO ARRAYCOPION (como su nombre lo dice)  COPIA LOS DATOS DEL ARRAYORIGINAL, EN LAS MISMAS POSICIONES
         3.- TERCERO ARRAYCOPION AGREGA EN LA ULTIMA POSICION ,AGREGA AL PILOTONUEVO
          */
-            if (empezarCarrera ==true){
+            if (empezarCarrera == true){
                 System.out.println("\nCarrera ya ha comenzado (No se puede inscribir piloto)");
                 return false;
-            }else {
+            } else {
 
                 //PASOS DE pilotoNuevo:
                 //PASO 1 (verificacion de pilotoNuevo)
@@ -68,7 +59,8 @@ public class Competicion {
                 for (Carrera c: arrayCarreras) {
                     c.anhadirPiloto(pilotoNuevo);
                 }
-                System.out.println("Piloto: "+pilotoNuevo.getNombrePiloto()+"ha sido añadido al Campeonato y a la Carrera Correctamente");
+
+                System.out.println("Piloto: " + pilotoNuevo.getNombrePiloto() + " ha sido añadido al Campeonato y a la Carrera correctamente");
                 return true;
             }//si es emoji lo coloque yo no una IA (Carlos Raul)
 
@@ -92,7 +84,7 @@ public class Competicion {
         // Comprobar si ya existe una carrera en el mismo circuito
         for (Carrera carrera:arrayCarreras) {
             if (carrera.getCircuito()==circuito) {
-                System.out.println("No se ha podido añadir la carrera. Ya hay una programada en el circuito "
+                System.out.print("\nNo se ha podido añadir la carrera. Ya hay una programada en el circuito "
                         + circuito.getNombreCircuito());
                 return false;
             }
@@ -110,7 +102,7 @@ public class Competicion {
 
         // Registramos la carrera en el circuito
         circuito.anhadirCarreraCircuito(nuevaCarrera);
-        System.out.println("Carrera: " + circuito.getNombreCircuito() + "ha sido añadida correctamente");
+        System.out.print("\nCarrera: " + circuito.getNombreCircuito() + " ha sido añadida correctamente");
 
         return true;
     }
@@ -120,11 +112,9 @@ public class Competicion {
      * @return true si se ejecutan las carreras, false si el campeonato ya se había simulado previamente.
      */
     public boolean arrancarCampeonato(boolean empezada) {
-        // TODO Bucle para ejecutarCarrera()
-
         if (empezarCarrera==true){
             return false;
-        }else {
+        } else {
             for (int i = 0; i <arrayCarreras.length ; i++) {
                 Carrera carreraActual=arrayCarreras[i];
                 carreraActual.ejecutarCarrera();
@@ -139,25 +129,22 @@ public class Competicion {
      * ordenados por su puntuación total obtenida en las carreras.
      */
     public void imprimirResultado() {
-        // TODO Lógica de puntuación y clasificación de pilotos
         if(empezarCarrera) {
             int[] arrayPuntos = new int[arrayPilotos.length];
 
             for (int i = 0; i < arrayCarreras.length; i++) {
                 calculoResultadoPuntos(arrayCarreras[i],arrayPuntos);
             }
-            System.out.println("\n +---CLASIFICACION FINAL DE LOS PILOTOS---+: ");
+            System.out.println("\n==================================================");
+            System.out.println(" 🏆 CLASIFICACIÓN FINAL DE PILOTOS: " + nombreCompeticion.toUpperCase() + " 🏆");
+            System.out.println("==================================================");
             for (int i = 0; i < arrayPilotos.length; i++) {
-                System.out.println((i+1)+"º LUGAR CON: "+arrayPuntos[i]+" PUNTOS EL PILOTO: "+arrayPilotos[i].getNombrePiloto());
+                System.out.println((i+1)+"º LUGAR CON: "+arrayPuntos[i]+" PUNTOS EL PILOTO: "+arrayPilotos[i].getNombrePiloto()
+                        + " (" + arrayPilotos[i].getEdadPiloto() + " años, Habilidad: " + arrayPilotos[i].getHabilidadString() + ")");
             }
-        }else {
+        } else {
             System.out.println("La Competicion aun no finaliza");
         }
-
-
-
-
-
     }
 
     private void calculoResultadoPuntos(Carrera c, int[] puntos ) {
@@ -194,16 +181,11 @@ public class Competicion {
         }
     }
 
-
-
     /**
      * Calcula e imprime por consola la clasificación final a nivel de escuderías,
      * sumando los puntos de todos los pilotos de cada escudería.
      */
     public void imprimirResultadoEscuderia() {
-        // TODO: Lógica de extracción de equipos, suma de puntos y clasificación
-        System.out.println("\n---CLASIFICACIÓN FINAL POR ESCUDERÍAS: " + nombreCompeticion + "---");
-
         String[] escuderias = new String[0];
         int[] puntosEscuderias = new int[arrayPilotos.length];
 
@@ -213,7 +195,7 @@ public class Competicion {
             boolean existe = false;
 
             for (String escuderiaGuardada:escuderias) {
-                if (escuderiaGuardada.equals(nombreEscuderia)) {
+                if (escuderiaGuardada.equalsIgnoreCase(nombreEscuderia)) {
                     existe = true;
                     break;
                 }
@@ -241,11 +223,11 @@ public class Competicion {
 
             // Generamos el bucle sobre el array de escuderías para encontrar qué índice tiene cada una
             for (int i = 0; i < escuderias.length; i++) {
-                if (escuderias[i].equals(primerLugar.getCoche().getEscuderia())) {
+                if (escuderias[i].equalsIgnoreCase(primerLugar.getCoche().getEscuderia())) {
                     indiceEscuderia1 = i;
-                } else if (escuderias[i].equals(segundoLugar.getCoche().getEscuderia())) {
+                } else if (escuderias[i].equalsIgnoreCase(segundoLugar.getCoche().getEscuderia())) {
                     indiceEscuderia2 = i;
-                } else if (escuderias[i].equals(tercerLugar.getCoche().getEscuderia())) {
+                } else if (escuderias[i].equalsIgnoreCase(tercerLugar.getCoche().getEscuderia())) {
                     indiceEscuderia3 = i;
                 }
             }
@@ -274,6 +256,10 @@ public class Competicion {
                 }
             }
         }
+
+        System.out.println("\n=========================================================");
+        System.out.println(" 🏎️ CLASIFICACIÓN FINAL POR ESCUDERÍAS: " + nombreCompeticion.toUpperCase() + " 🏎️");
+        System.out.println("=========================================================");
 
         for (int i = 0; i < escuderias.length; i++) {
             System.out.println((i + 1) + ".- " + escuderias[i] + " con " + puntosEscuderias[i] + " puntos.");

@@ -6,22 +6,6 @@ public class Carrera {
     private Piloto[] arrayPiloto;
     private Circuito circuito;
     private double[] velocidades;
-    private boolean empezarCarrera;
-
-
-
-    public Circuito getCircuito() {
-        return circuito;
-    }
-    public Piloto[] getArrayPilotoPuesto() {
-        return arrayPilotoPuesto;
-    }
-
-    public Piloto[] getArrayPiloto() {
-        return arrayPiloto;
-    }
-
-
 
     public Carrera(String temporadaCarrera, boolean yaCorrieron, Circuito circuito, double vueltasCarrera, Piloto[] pilotos) {
         this.temporadaCarrera = temporadaCarrera;
@@ -29,17 +13,25 @@ public class Carrera {
         this.yaCorrieron = yaCorrieron;
         this.vueltasCarrera = vueltasCarrera;
         this.velocidades = new double[pilotos.length];
-        this.arrayPilotoPuesto =  new Piloto[pilotos.length];
+        this.arrayPilotoPuesto = new Piloto[pilotos.length];
         this.arrayPiloto = pilotos;
     }
 
-    public double LongitudTotalHecho(){
+    public Circuito getCircuito() {
+        return circuito;
+    }
+
+    public Piloto[] getArrayPilotoPuesto() {
+        return arrayPilotoPuesto;
+    }
+
+    public double LongitudTotalHecho() {
         double longitudCir = circuito.getLongitudCircuito();
         return longitudCir * vueltasCarrera;
     }
 
-    public boolean ejecutarCarrera(){
-        if(yaCorrieron){
+    public boolean ejecutarCarrera() {
+        if (yaCorrieron) {
             System.out.println("Ya se ha corrido este circuito");
             return false;
         }
@@ -47,18 +39,21 @@ public class Carrera {
         velocidades = new double[arrayPiloto.length];
         arrayPilotoPuesto = new Piloto[arrayPiloto.length];
 
-        System.out.println("\nLA CARRERA EMPIEZA: \n");
-        System.out.println("+--Carrera Empieza en Circuito: "+circuito.getNombreCircuito()+"--+\n");
+        System.out.println("\n=========================================");
+        System.out.println("🏆 GRAN PREMIO DE LA TEMPORADA: " + this.temporadaCarrera.toUpperCase());
+        System.out.println("📍 CIRCUITO: " + circuito.getNombreCircuito());
+        System.out.println("🔄 DISTANCIA: Carrera a " + (int)this.vueltasCarrera + " vueltas");
+        System.out.println("=========================================\n");
+        System.out.println("LA CARRERA EMPIEZA... ¡SEMÁFORO EN VERDE!");
 
-        for(int i = 0; i < arrayPiloto.length; i++){
+        for (int i = 0; i < arrayPiloto.length; i++) {
             Piloto piloto = arrayPiloto[i];
             double velocidad = piloto.velocidadMedia();
 
-            if(!piloto.getCoche().acabaCarrera((int)LongitudTotalHecho())){
+            if (!piloto.getCoche().acabaCarrera((int) LongitudTotalHecho())) {
                 velocidad = 0;
                 System.out.println(piloto.getNombrePiloto() + " ha abandonado");
-            }
-            else{
+            } else {
                 System.out.println(piloto.getNombrePiloto() + " --- Velocidad media: " + velocidad);
             }
             velocidades[i] = velocidad;
@@ -67,57 +62,38 @@ public class Carrera {
         ordenarPilotos();
         yaCorrieron = true;
         return true;
-
-
     }
-    private void ordenarPilotos(){
 
-
-        for(int i = 1; i < velocidades.length; i++){
-
+    private void ordenarPilotos() {
+        for (int i = 1; i < velocidades.length; i++) {
             double velocidadActual = velocidades[i];
             Piloto pilotoActual = arrayPilotoPuesto[i];
             int j = i - 1;
 
-
-            while(j >= 0 && velocidades[j] < velocidadActual){
-
-                velocidades[j+1] = velocidades[j];
-                arrayPilotoPuesto[j+1] = arrayPilotoPuesto[j];
+            while (j >= 0 && velocidades[j] < velocidadActual) {
+                velocidades[j + 1] = velocidades[j];
+                arrayPilotoPuesto[j + 1] = arrayPilotoPuesto[j];
                 j--;
-
             }
-
-            velocidades[j+1] = velocidadActual;
-            arrayPilotoPuesto[j+1] = pilotoActual;
-
+            velocidades[j + 1] = velocidadActual;
+            arrayPilotoPuesto[j + 1] = pilotoActual;
         }
-
     }
 
     public boolean anhadirPiloto(Piloto pilotoNuevo) {
-
-        if (empezarCarrera){
-            System.out.println("Carrera ya ha comenzado (No se puede inscribir piloto)");
-            return false;
-        }else {
-            for (int i = 0; i < arrayPiloto.length; i++) {
-                if (arrayPiloto[i] == pilotoNuevo) {
-                    System.out.println("Piloto ya existente ");
-                    return false;
-                }
+        for (int i = 0; i < arrayPiloto.length; i++) {
+            if (arrayPiloto[i] == pilotoNuevo) {
+                System.out.println("Piloto ya existente ");
+                return false;
             }
-
-            Piloto[] arrayCopion = new Piloto[arrayPiloto.length + 1];
-
-            for (int i = 0; i < arrayPiloto.length; i++) {
-                arrayCopion[i] = arrayPiloto[i];
-            }
-            arrayCopion[arrayPiloto.length] = pilotoNuevo;
-            arrayPiloto = arrayCopion;
-            return true;
-
         }
-    }
+        Piloto[] arrayCopion = new Piloto[arrayPiloto.length + 1];
 
+        for (int i = 0; i < arrayPiloto.length; i++) {
+            arrayCopion[i] = arrayPiloto[i];
+        }
+        arrayCopion[arrayPiloto.length] = pilotoNuevo;
+        arrayPiloto = arrayCopion;
+        return true;
+    }
 }
