@@ -142,5 +142,27 @@ public class Competicion {
 
         String[] escuderias = new String[0];
         int[] puntosEscuderias = new int[arrayPilotos.length];
+
+        // Rellenamos el array de escuderias
+        for (Piloto piloto:arrayPilotos) {
+            String nombreEscuderia = piloto.getCoche().getEscuderia();
+            boolean existe = false;
+
+            for (String escuderiaGuardada:escuderias) {
+                if (escuderiaGuardada.equals(nombreEscuderia)) {
+                    existe = true;
+                    break;
+                }
+            }
+
+            if (!existe) {
+                String[] temp = new String[escuderias.length + 1];
+                for (int i = 0; i < escuderias.length; i++) {
+                    temp[i] = escuderias[i];
+                }
+                temp[temp.length - 1] = nombreEscuderia;
+                escuderias = temp;
+            }
+        }
     }
 }
